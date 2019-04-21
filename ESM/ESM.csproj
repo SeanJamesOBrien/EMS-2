@@ -91,6 +91,11 @@
     <Content Include="pages\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Billing.cs" />
+    <Compile Include="BillingSummary.cs" />
+    <Compile Include="FileSupport.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="Networking.cs" />
     <Compile Include="pages\Address.aspx.cs">
       <DependentUpon>Address.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +160,8 @@
     <Compile Include="pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Scheduling.cs" />
+    <Compile Include="SupportConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NavBar.Master" />
