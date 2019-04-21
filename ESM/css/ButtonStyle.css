@@ -1,0 +1,187 @@
+﻿
+/*Buttons in the dropdown menu of the navigation bar*/
+.btnMenu {
+    border: outset;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    font-size: large;
+    color: white;
+    transition-duration: 0.8s;
+    box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    background-color: #007dc1;
+    border: 1px solid #124d77;
+    display: inline-block;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 13px;
+    padding: 20px 2px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #154682;
+}
+
+    .btnMenu:hover {
+        background-color: lightblue;
+    }
+
+    .btnMenu:active {
+        position: relative;
+        top: 1px;
+    }
+
+
+.btnBar {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    color: white;
+    transition-duration: 0.8s;
+    background-color: navy;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 13px;
+    padding: 20px 20px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #154682;
+    display: inline-block;
+}
+
+    .btnBar:hover {
+        background-color: #007dc1;
+    }
+
+    .btnBar:active {
+        position: relative;
+        top: 1px;
+    }
+
+
+
+
+/*SCC sytle for the navigation bar*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:navy;
+}
+
+li {
+    float: left;
+}
+
+    li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        transition-duration: 0.8s;
+        text-align: center;
+        padding: 19px 18px;
+        text-decoration: none;
+    }
+
+        li a:hover, .dropdown:hover .dropbtn {
+            background-color: #007dc1;
+        }
+
+    li.dropdown {
+        display: inline-block;
+    }
+
+
+/*Style for the dropdown from the navigation bar*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f111f1;
+        }
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+.btnLogin {
+    box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+    background-color: #79bbff;
+    text-indent: 0px;
+    border: 1px solid #84bbf3;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    height: 45px;
+    line-height: 45px;
+    width: 122px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #528ecc;
+}
+
+    .btnLogin:hover {
+        background-color: #378de5;
+    }
+
+    .btnLogin:active {
+        position: relative;
+        top: 1px;
+    }
+
+
+.btnDemo {
+    background-color: #de5d00;
+    -webkit-border-top-left-radius: 24px;
+    -moz-border-radius-topleft: 24px;
+    border-top-left-radius: 24px;
+    -webkit-border-top-right-radius: 24px;
+    -moz-border-radius-topright: 24px;
+    border-top-right-radius: 24px;
+    -webkit-border-bottom-right-radius: 24px;
+    -moz-border-radius-bottomright: 24px;
+    border-bottom-right-radius: 24px;
+    -webkit-border-bottom-left-radius: 24px;
+    -moz-border-radius-bottomleft: 24px;
+    border-bottom-left-radius: 24px;
+    text-indent: 0px;
+    border: 1px solid #eeb44f;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 58px;
+    line-height: 58px;
+    width: 127px;
+    text-decoration: none;
+    text-align: center;
+    margin-left:10%;
+}
+
+    .btnDemo:hover {
+        background-color: #fb9e25;
+    }
+
+    .btnDemo:active {
+        position: relative;
+        top: 1px;
+    }
+/* This button was generated using CSSButtonGenerator.com */
+
+        

@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavBar.master.cs" Inherits="ESM.NavBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+        <link rel="stylesheet" type="text/css" href="~/css/ButtonStyle.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/Style.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/Month.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/Demographics.css" />
+
+
+</head>
+<body class="background">
+    <form id="form1" runat="server">
+        <div>
+
+                 <ul>
+                    <%--<li class="dropdown">
+                    <a  class="dropbtn">Book Appointment</a>
+                    <div class="dropdown-content">
+                        <asp:Button CssClass="btnMenu" ID="BtnBookWithCare" runat="server" Text="With Caretaker" OnClick="BtnBookWithCare_Click"/>
+                        <asp:Button CssClass="btnMenu" ID="BtnBookNoCare" runat="server" Text="Without Caretaker" OnClick="BtnBook_Click"/>
+                    </div>
+                  </li>--%>
+                  <li class="dropdown">
+                    <a  class="dropbtn">Add Patient</a>
+                    <div class="dropdown-content">
+                      <asp:Button CssClass="btnMenu" ID="BtnAddWithCare" runat="server" Text="Without Caretaker" OnClick="BtnAddCareTaker_Click" />
+                      <asp:Button CssClass="btnMenu" ID="BtnAddPatient" runat="server" Text="With Caretaker" OnClick="BtnAddPatient_Click" />
+                    </div>
+                  </li> 
+                  <li class="dropdown">
+                    <a  class="dropbtn">View Schedule</a>
+                    <div class="dropdown-content">
+                      <asp:Button CssClass="btnMenu" ID="BtnMonth" runat="server" Text="View Month" OnClick="BtnMonth_Click" />
+                      <asp:Button CssClass="btnMenu" ID="BtnWeek" runat="server" Text="View Week" OnClick="BtnWeek_Click" />
+                      <asp:Button CssClass="btnMenu" ID="BtnDay" runat="server" Text="View Day" OnClick="BtnDay_Click" />
+                    </div>
+                  </li>
+                  <li><asp:Button CssClass="btnBar" ID="BtnBilling" runat="server" Text="View Billing" OnClick="BtnBilling_Click" /></li>
+                  <li><asp:Button CssClass="btnBar" ID="BtnAbout" runat="server" Text="About" OnClick="BtnAbout_Click" /></li>
+                </ul>
+            <asp:ContentPlaceHolder ID="PageContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <table>
+            <tr>
+                <th>Error</th>
+                <th><asp:Label ID="lbError" runat="server"></asp:Label></th>
+            </tr>
+       </table>
+        </div>
+    </form>
+
+</body>
+</html>
