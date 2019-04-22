@@ -1,6 +1,6 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,7 +45,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -65,17 +69,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="css\bootstrapCss\bootstrap-grid.css" />
+    <Content Include="css\bootstrapCss\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrapCss\bootstrap-reboot.css" />
+    <Content Include="css\bootstrapCss\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrapCss\bootstrap.css" />
+    <Content Include="css\bootstrapCss\bootstrap.min.css" />
     <Content Include="css\Demographics.css" />
     <Content Include="images\background.jpg" />
     <Content Include="images\Login.png" />
     <Content Include="images\LoginBackground.png" />
+    <Content Include="js\bootstrapJs\bootstrap.bundle.js" />
+    <Content Include="js\bootstrapJs\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrapJs\bootstrap.js" />
+    <Content Include="js\bootstrapJs\bootstrap.min.js" />
     <Content Include="js\calendarscript.js" />
-    <Content Include="js\MonthCal.js" />
     <Content Include="pages\Address.aspx" />
     <Content Include="pages\BIlling.aspx" />
     <Content Include="css\ButtonStyle.css" />
@@ -87,15 +95,47 @@
     <Content Include="pages\Patient.aspx" />
     <Content Include="pages\CareTaker.aspx" />
     <Content Include="css\Month.css" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="pages\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressRecord.cs" />
+    <Compile Include="AppointmentRecord.cs" />
+    <Compile Include="AppointmentRecordsAccessor.cs" />
     <Compile Include="Billing.cs" />
+    <Compile Include="BillingRecord.cs" />
+    <Compile Include="BillingRecordsAccessor.cs" />
     <Compile Include="BillingSummary.cs" />
+    <Compile Include="BuildPatient.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="DatabaseAccessor.cs" />
+    <Compile Include="Demographics.cs" />
+    <Compile Include="EMSAddress.cs" />
     <Compile Include="FileSupport.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="HealthCard.cs" />
     <Compile Include="Logging.cs" />
-    <Compile Include="Networking.cs" />
     <Compile Include="pages\Address.aspx.cs">
       <DependentUpon>Address.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,6 +192,8 @@
     <Compile Include="pages\CareTaker.aspx.designer.cs">
       <DependentUpon>CareTaker.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PatientRecord.cs" />
+    <Compile Include="PatientRecordsAccessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -160,12 +202,33 @@
     <Compile Include="pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Scheduling.cs" />
     <Compile Include="SupportConstants.cs" />
+    <Compile Include="ValidatePatient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NavBar.Master" />
+    <Content Include="css\bootstrapCss\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrapCss\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrapCss\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrapCss\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrapCss\bootstrap.css.map" />
+    <Content Include="css\bootstrapCss\bootstrap.min.css.map" />
+    <Content Include="js\bootstrapJs\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrapJs\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrapJs\bootstrap.js.map" />
+    <Content Include="js\bootstrapJs\bootstrap.min.js.map" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -175,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -206,7 +272,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

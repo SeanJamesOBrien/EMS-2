@@ -22,7 +22,7 @@
                 <th><asp:TextBox CssClass="textbox" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></th>
             </tr>
             <tr>
-                <th colspan="2"><asp:Button CssClass="btnLogin" ID="btnLogin" runat="server" Text="Login" OnClick="BtnLogin_Click" /></th>
+                <th colspan="2"><asp:Button CssClass="btnLogin" ID="btnLogin" runat="server" Text="Login" OnClick="BtnLogin_Click" OnAuthenticate="ValidateUser"/></th>
             </tr>
        </table>
        </div>

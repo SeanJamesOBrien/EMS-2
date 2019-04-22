@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="~/css/Style.css" />
         <link rel="stylesheet" type="text/css" href="~/css/Month.css" />
         <link rel="stylesheet" type="text/css" href="~/css/Demographics.css" />
+        <script src="//js/calendarscript.js"></script>
 
 
 </head>
